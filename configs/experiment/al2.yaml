@@ -1,0 +1,14 @@
+# @package _global_
+# AL2: Ace-A-Nme, 300 K, friction 1/ps; 750k steps on 4 GPUs x 128.
+defaults:
+  - override /system: al2
+  - override /data: al2
+
+model:
+  train_tau_max_ps: 0.1
+objective:
+  db:
+    start_step: 625000
+trainer:
+  total_steps: 750000
+  batch_size: 512

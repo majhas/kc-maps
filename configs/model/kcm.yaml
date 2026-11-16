@@ -1,0 +1,12 @@
+num_blocks: 8                                     # coupling blocks, x/p alternating; even
+layers_per_block: 2                               # attention layers per coupling block
+source_layers: 2                                  # attention + SwiGLU layers applied to the shared source context
+                                                  # before the coupling blocks
+channels: 384
+num_heads: 6
+ffn_hidden: ${mul:2,${model.channels}}            # SwiGLU width after every attention layer
+conditioner_hidden: ${mul:2,${model.channels}}    # conditioning-MLP SwiGLU width
+time_embedding_max_freq_per_ps: 2000.0            # highest angular frequency (1/ps) of the lag embedding
+T_std_ps: 0.01                                    # time unit (ps) of the dimensionless coordinates
+train_tau_min_ps: 1.0e-5                          # lag floor (sub-lags of the two-step target)
+train_tau_max_ps: ???                             # set by the experiment

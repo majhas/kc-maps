@@ -1,0 +1,16 @@
+name: adaptive
+ema: null                 # training run dirs only: EMA decay to load; null = objective.kc.target_ema
+attention: native         # native | bf16_cudnn (inference-only BF16 attention core)
+chains: 16
+seed: 42                  # chain i's key is fold_in(PRNGKey(seed), i)
+tau_max_fs: 30.0          # lag of every step's first attempt
+tau_min_fs: 1.5625        # floor of the halving fallback grid
+force_cap: 7.0            # per-atom cap on the dimensionless mean impulse; null = uncapped
+redraw_attempts: 5
+target_ns: 1000.0         # simulated time per chain
+nfe_cap_factor: 1.05
+frame_ps: 1.0
+save_every_ps: 250.0      # frames per saved chunk = save_every_ps / frame_ps
+max_chunks: null
+wall_seconds: 3600.0      # execution budget of one invocation, compilation excluded
+unroll: 1

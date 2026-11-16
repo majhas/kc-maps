@@ -1,0 +1,6 @@
+name: AL6
+pdb: AAAAAA_310K.pdb                    # packaged under kcmaps/assets/pdb
+temperature_K: 310.0
+gamma_ps_inv: 0.3
+forcefield: [amber14-all.xml, implicit/obc1.xml]
+cutoff_nm: 2.0                          # nonperiodic cutoff of nonbonded and GB terms

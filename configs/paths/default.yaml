@@ -1,0 +1,4 @@
+root_dir: ${oc.env:KCMAPS_ROOT,${hydra:runtime.cwd}}
+data_dir: ${oc.env:KCMAPS_DATA,${paths.root_dir}/data}
+log_dir: ${oc.env:KCMAPS_LOGS,${paths.root_dir}/logs}
+output_dir: ${hydra:runtime.output_dir}

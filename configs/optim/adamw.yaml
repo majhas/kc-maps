@@ -1,0 +1,8 @@
+lr: 3.0e-4
+end_lr: 3.0e-6
+warmup_fraction: 0.005     # warmup_steps = round(warmup_fraction * total_steps); decay ends at total_steps
+b1: 0.9
+b2: 0.95
+eps: 1.0e-8
+weight_decay: 1.0e-8
+clip_norm: 1.0

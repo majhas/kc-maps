@@ -1,0 +1,12 @@
+seed: 42
+total_steps: ???                 # run length: schedule, warmup and horizon anneal follow it
+batch_size: 512                  # global; per-device batch must be a multiple of 4
+ema_decays: [0.995, 0.999, 0.9995]
+horizon_start_ps: 1.0e-3         # lag ceiling H(0); geometric to model.train_tau_max_ps over the anneal
+horizon_anneal_fraction: 0.15    # anneal_steps = round(fraction * total_steps)
+log_every: 100
+val_every: 5000                  # held-out loss on the same fixed batches every val_every steps
+val_batches: 8                   # validation batches of batch_size rows
+save_every: 25000
+wandb: false
+wandb_project: kcmaps

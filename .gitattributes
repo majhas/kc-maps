@@ -1,0 +1,2 @@
+# Fixed-width PDB columns carry trailing spaces.
+src/kcmaps/assets/pdb/*.pdb -whitespace

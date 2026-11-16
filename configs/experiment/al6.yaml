@@ -1,0 +1,16 @@
+# @package _global_
+# AL6: hexa-alanine, 310 K, friction 0.3/ps, 2 nm cutoff; 1M steps on 8 GPUs x 128.
+defaults:
+  - override /system: al6
+  - override /data: al6
+
+model:
+  train_tau_max_ps: 0.085
+objective:
+  db:
+    start_step: 825000
+optim:
+  b2: 0.9025
+trainer:
+  total_steps: 1000000
+  batch_size: 1024

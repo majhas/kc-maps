@@ -1,0 +1,14 @@
+defaults:
+  - _self_
+  - system: al2
+  - data: al2
+  - model: kcm
+  - objective: default
+  - optim: adamw
+  - trainer: default
+  - paths: default
+  - hydra: default
+  - experiment: ???          # required: experiment=al2|al4|al6
+
+task_name: train
+run_name: ${system.name}-${now:%Y%m%d-%H%M%S}

@@ -1,0 +1,11 @@
+name: mh
+ema: null
+attention: native
+sources: null             # .npy (S, atoms, 3) nm in PDB order; null = the checkpoint's start configuration
+tau_fs: 5.0
+walkers_per_source: 4
+burn_in_steps: 100
+steps: 1000
+batch_size: 64
+step_chunk: 64
+seed: 0

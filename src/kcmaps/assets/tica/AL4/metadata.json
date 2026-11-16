@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "coordinate_units": "nm",
+    "features": {
+      "specification": "cns_distances_sincos_phi_psi_omega",
+      "order": "upper-triangle C/N/S pair distances, then sin/cos blocks for phi, psi, omega"
+    },
+    "fit": {
+      "dimension": 2,
+      "lag_time_ps": 1000.0,
+      "frame_dt_ps": 1.0,
+      "scaling": "kinetic_map",
+      "koopman_reweighting": true,
+      "epsilon": 1e-06
+    },
+    "topology": {
+      "n_atoms": 42,
+      "atom_names": [
+        "CH3",
+        "H1",
+        "H2",
+        "H3",
+        "C",
+        "O",
+        "N",
+        "H",
+        "CA",
+        "HA",
+        "CB",
+        "HB1",
+        "HB2",
+        "HB3",
+        "C",
+        "O",
+        "N",
+        "H",
+        "CA",
+        "HA",
+        "CB",
+        "HB1",
+        "HB2",
+        "HB3",
+        "C",
+        "O",
+        "N",
+        "H",
+        "CA",
+        "HA",
+        "CB",
+        "HB1",
+        "HB2",
+        "HB3",
+        "C",
+        "O",
+        "N",
+        "H",
+        "C",
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "tica_atom_selection": "symbol == C or symbol == N or symbol == S",
+      "selected_atom_indices": [
+        0,
+        4,
+        6,
+        8,
+        10,
+        14,
+        16,
+        18,
+        20,
+        24,
+        26,
+        28,
+        30,
+        34,
+        36,
+        38
+      ]
+    }
+  }
+}

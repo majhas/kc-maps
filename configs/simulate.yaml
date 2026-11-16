@@ -1,0 +1,11 @@
+defaults:
+  - _self_
+  - sampler: adaptive
+  - paths: default
+  - hydra: default
+
+task_name: simulate
+checkpoint: ???        # inference checkpoint (config.yaml, params.msgpack, start_position.npy) or training run dir
+step: null             # training run dirs only; null = latest step in checkpoints/
+resume: false          # continue a stopped run in the same run_name directory
+run_name: ${now:%Y%m%d-%H%M%S}

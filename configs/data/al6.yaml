@@ -1,0 +1,2 @@
+file: AL6/train.npz          # relative to paths.data_dir; (frames, atoms, 3) float32 nm under `positions`
+val_file: AL6/val.npz        # held-out frames for validation, same layout

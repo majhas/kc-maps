@@ -1,0 +1,20 @@
+kc:
+  weight: 1.0
+  cap: 10.0                 # one-sided cap of the per-row flow NLL; 0 = uncapped
+  target_ema: 0.995         # must be in trainer.ema_decays
+  log_uniform_fraction: 0.25
+  hot_source:               # source-momentum temperature augmentation (KC and PF rows; DB rows use the bath)
+    fraction: 0.75
+    mean_K: 500.0
+    std_K: 150.0
+    floor_K: 50.0
+aux_loss: db                # db | pf | null (KC only); the inactive block below is type-checked only
+db:
+  weight: 0.2
+  start_step: ???           # k0: plain KC before, 3 KC : 1 DB rows from k0; always a save step
+  ramp_steps: 5000
+pf:
+  weight: 1.0
+  start_step: 10000
+  ramp_steps: 10000
+  tau_max_ps: 0.01

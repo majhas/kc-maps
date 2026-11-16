@@ -1,0 +1,25 @@
+defaults:
+  - _self_
+  - paths: default
+  - hydra: default
+
+task_name: evaluate
+simulation: ???                    # adaptive-chains output directory (chunks/, state.json, run_spec.json)
+reference_dir: ${paths.data_dir}/reference    # <SYSTEM>.npz: energy, rama, tica, frames_per_trajectory, frame_ps
+budget_minutes: 60.0               # frames committed within this much sampler execution time: per-chunk compiled-call
+                                   # time summed in wall_cumulative_seconds (compilation, transfers and writes excluded)
+burn_in_fraction: 0.10             # per chain: equilibrium drops this fraction of its simulated time within the budget,
+                                   # kinetics its first floor(fraction * n) usable frames
+n_frames: 10000                    # frames per side of each W2 draw
+n_draws: 3
+draw_seed: 1050                    # draw d: default_rng(draw_seed + d)
+min_frames: 2048                   # fewer usable frames: no metrics
+floor: false                       # also score reference vs disjoint reference (default_rng(900 + d))
+energy_batch: 2048
+tica_batch: 4096
+kinetics:
+  enabled: false
+  bootstrap: 2000                  # resamplings of the chains
+  seed: 20261023
+  max_lag_ps: 20000                # largest autocorrelation lag
+run_name: ${now:%Y%m%d-%H%M%S}

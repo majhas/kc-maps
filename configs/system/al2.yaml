@@ -1,0 +1,6 @@
+name: AL2
+pdb: Ace-A-Nme_300K.pdb                 # packaged under kcmaps/assets/pdb
+temperature_K: 300.0
+gamma_ps_inv: 1.0
+forcefield: [amber99sbildn.xml, amber99_obc.xml]
+cutoff_nm: null                         # null = no cutoff
